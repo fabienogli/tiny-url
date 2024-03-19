@@ -51,8 +51,9 @@ func (s *SlugPoster) Handle() gin.HandlerFunc {
 			return
 		}
 		c.JSON(http.StatusCreated, response{
-			Url:     query.Url,
-			TinyURL: fmt.Sprintf("https://%s/%s", s.serverDomain, slug),
+			Url:  query.Url,
+			Slug: slug,
 		})
+
 	}
 }
