@@ -20,7 +20,8 @@ services:
       - learning
     expose:
       - 8080
-    command: go run /app/cmd/api/main.go
+    #for debug purpose
+    #command: go run /app/cmd/api/main.go
 
   postgresdb:
     image: postgres:latest
