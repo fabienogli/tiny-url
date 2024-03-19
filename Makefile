@@ -1,12 +1,13 @@
-THIS_FILE := $(lastword $(MAKEFILE_LIST))
+help:		## Show this help.
+	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
 
-build:
+build: 		## build stack
 	docker-compose -f docker-compose.yml build
-up:
+up: 		## start stack
 	docker-compose -f docker-compose.yml up -d
-down:
+down: 		## stop all stack
 	docker-compose -f docker-compose.yml down
-restart:
+restart: 	## restart stack
 	docker-compose -f docker-compose.yml stop
-logs:
+logs: 		## display logs
 	docker-compose -f docker-compose.yml logs -f
